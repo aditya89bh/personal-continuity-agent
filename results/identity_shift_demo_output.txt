@@ -1,0 +1,19 @@
+Personal Continuity Agent · Identity Shift Demo
+========================================================
+Stored events: 5
+Identity claims: 4
+
+Identity claims by confidence:
+- [0.6667] professional_identity: AGI systems thinker (2 evidence items)
+- [0.6333] identity_theme: Cognitive architecture builder (2 evidence items)
+- [0.6333] identity_theme: Embodied continuity researcher (2 evidence items)
+- [0.3000] professional_identity: Robotics founder (1 evidence items)
+
+Continuity interpretation:
+Continuity momentum is currently 'strong_momentum' with a score of 0.80.
+Strong identity themes include: AGI systems thinker, Cognitive architecture builder, Embodied continuity researcher.
+Recurring themes across memory events: memory, agents, robotics, continuity.
+Detected 0 unresolved events, 0 contradictions, and 0 continuity gaps.
+
+Identity shift reading:
+The user begins with a robotics/operator identity, then increasingly accumulates evidence around AGI systems, cognitive architectures, memory, and embodied continuity. The model does not erase the robotics identity. It reframes it as part of a broader continuity-aware AI trajectory.
