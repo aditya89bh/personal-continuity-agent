@@ -1,5 +1,7 @@
 # Personal Continuity Agent
 
+![Tests](https://github.com/aditya89bh/personal-continuity-agent/actions/workflows/tests.yml/badge.svg)
+
 > A modular continuity engine for long-term memory, identity modeling, reflection, and temporal reasoning in AI systems.
 
 ## Why Continuity Matters
