@@ -1,0 +1,19 @@
+Personal Continuity Agent · Continuity Recovery Demo
+===============================================================
+Stored events: 4
+Identity claims: 2
+Momentum status: weak_momentum
+Continuity gaps: 1
+Unresolved events: 1
+
+Continuity momentum is currently 'weak_momentum' with a score of 0.30.
+Strong identity themes include: Continuity systems builder, Agent architecture researcher.
+Recurring themes across memory events: repo, continuity.
+Detected 1 unresolved events, 0 contradictions, and 1 continuity gaps.
+
+Recovery Brief:
+- Identity context: Continuity systems builder, Agent architecture researcher
+- Recurring themes: repo, continuity
+- Continuity gaps detected: 1
+- Main unresolved loop: User leaves reflection demo unfinished before switching priorities.
+- Recommended restart: finish the reflection demo, capture output, then update README with demo results.
