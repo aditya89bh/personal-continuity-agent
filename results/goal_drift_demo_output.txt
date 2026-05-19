@@ -1,0 +1,17 @@
+Personal Continuity Agent · Goal Drift Demo
+====================================================
+Stored events: 4
+Goal drift status: high_drift_risk
+Goal drift score: 1.0
+Progress events: 1
+Drift events: 2
+Contradictions: 1
+
+Most salient events:
+- [0.8175] 2026-01-21 · contradiction: User says the research practice still matters but keeps moving it behind other tasks.
+- [0.5950] 2026-01-14 · missed_commitment: User skips the second weekly note because of scattered priorities.
+- [0.5150] 2026-01-01 · goal: User commits to publishing one AGI research note every week.
+- [0.3950] 2026-01-07 · progress: User publishes the first AGI research note.
+
+Continuity recovery brief:
+The user still identifies with the AGI research goal, but repeated missed commitments and explicit contradiction suggest the goal is at risk of decay. Recommended next action: reduce the weekly note into a smaller 30-minute research log to preserve continuity and rebuild momentum.
