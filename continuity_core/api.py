@@ -9,6 +9,7 @@ from continuity_core.identity.model import IdentityModel
 from continuity_core.memory.event import MemoryEvent
 from continuity_core.memory.sqlite_store import SQLiteEventStore
 from continuity_core.reflection.engine import ReflectionEngine
+from continuity_core.temporal.timeline import TimelineBuilder
 
 
 app = FastAPI(
@@ -71,6 +72,30 @@ def list_events() -> list[dict]:
             "importance": event.importance,
         }
         for event in events
+    ]
+
+
+@app.get("/timeline")
+def timeline() -> list[dict]:
+    events = store.list_all()
+    timeline_days = TimelineBuilder().build(events)
+
+    return [
+        {
+            "date": day.date,
+            "events": [
+                {
+                    "event_id": item.event_id,
+                    "event_type": item.event_type,
+                    "content": item.content,
+                    "tags": item.tags,
+                    "importance": item.importance,
+                    "salience": item.salience,
+                }
+                for item in day.events
+            ],
+        }
+        for day in timeline_days
     ]
 
 
