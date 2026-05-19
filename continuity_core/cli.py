@@ -3,6 +3,7 @@
 Example usage:
 
     python -m continuity_core.cli add-event --content "Started continuity repo" --event-type goal
+    python -m continuity_core.cli ingest-markdown --path journals/2026-05-19.md
     python -m continuity_core.cli list-events
     python -m continuity_core.cli reflect
 """
@@ -13,6 +14,7 @@ import argparse
 from pathlib import Path
 
 from continuity_core.identity.model import IdentityModel
+from continuity_core.ingestion.markdown_loader import MarkdownJournalLoader
 from continuity_core.memory.event import MemoryEvent
 from continuity_core.memory.sqlite_store import SQLiteEventStore
 from continuity_core.reflection.engine import ReflectionEngine
@@ -41,6 +43,12 @@ def build_parser() -> argparse.ArgumentParser:
     add_event.add_argument("--tag", action="append", default=[], help="Tag. Can be repeated.")
     add_event.add_argument("--importance", type=float, default=0.5, help="Importance from 0.0 to 1.0.")
 
+    ingest_markdown = subparsers.add_parser(
+        "ingest-markdown",
+        help="Ingest a markdown journal file into memory events.",
+    )
+    ingest_markdown.add_argument("--path", required=True, help="Path to markdown journal file.")
+
     subparsers.add_parser("list-events", help="List stored events.")
     subparsers.add_parser("reflect", help="Generate a basic continuity reflection.")
 
@@ -59,6 +67,17 @@ def add_event_command(store: SQLiteEventStore, args: argparse.Namespace) -> None
     print(f"Added event: {event.event_id}")
     print(f"Type: {event.event_type}")
     print(f"Content: {event.content}")
+
+
+def ingest_markdown_command(store: SQLiteEventStore, args: argparse.Namespace) -> None:
+    loader = MarkdownJournalLoader()
+    events = loader.load_file(args.path)
+    store.add_many(events)
+
+    print(f"Ingested markdown journal: {args.path}")
+    print(f"Created events: {len(events)}")
+    for event in events:
+        print(f"- {event.event_type}: {event.content}")
 
 
 def list_events_command(store: SQLiteEventStore) -> None:
@@ -103,6 +122,8 @@ def main() -> None:
 
     if args.command == "add-event":
         add_event_command(store, args)
+    elif args.command == "ingest-markdown":
+        ingest_markdown_command(store, args)
     elif args.command == "list-events":
         list_events_command(store)
     elif args.command == "reflect":
