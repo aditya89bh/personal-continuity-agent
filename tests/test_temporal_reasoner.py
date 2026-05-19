@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import pytest
 
@@ -9,14 +9,15 @@ from continuity_core.temporal.reasoner import TemporalReasoner
 def build_event(
     content: str,
     event_type: str,
-    day: int,
+    day_offset: int,
     tags: list[str] | None = None,
     metadata: dict | None = None,
 ) -> MemoryEvent:
+    base_date = datetime(2026, 1, 1, tzinfo=timezone.utc)
     return MemoryEvent(
         content=content,
         event_type=event_type,
-        timestamp=datetime(2026, 1, day, tzinfo=timezone.utc),
+        timestamp=base_date + timedelta(days=day_offset - 1),
         tags=tags or [],
         metadata=metadata or {},
         importance=0.7,
