@@ -2,7 +2,7 @@
 
 > A modular continuity engine for long-term memory, identity modeling, reflection, and temporal reasoning in AI systems.
 
-## Overview
+## Why Continuity Matters
 
 Most AI systems forget.
 
@@ -17,137 +17,268 @@ The Personal Continuity Agent explores a different direction:
 
 The goal is to build systems that can maintain coherent understanding of a human across weeks, months, and years.
 
-## Core Thesis
+## Core Idea
 
 Human intelligence is deeply temporal.
 
-Real continuity requires memory, reflection, salience, identity persistence, behavioral tracking, and long-horizon reasoning.
+Real continuity requires:
+
+- memory
+- salience
+- identity persistence
+- temporal reasoning
+- reflection
+- recovery from context loss
 
 This project explores continuity as a foundational primitive for intelligent systems.
 
-## Key Concepts
+## Architecture
 
-### Event Memory
+```txt
+User Events
+    ↓
+Memory Layer
+    ↓
+Salience Engine
+    ↓
+Identity Model
+    ↓
+Temporal Reasoner
+    ↓
+Reflection Engine
+    ↓
+Continuity Recovery
+```
 
-Stores conversations, actions, goals, commitments, routines, emotional events, and behavioral traces.
+## Cognitive Layers
 
-### Identity Modeling
+### Memory
 
-Tracks evolving values, motivations, beliefs, behavioral tendencies, contradictions, and aspirations.
+Structured storage for:
 
-Identity is treated as a dynamic probabilistic model rather than a fixed profile.
-
-### Temporal Reasoning
-
-The system tracks unfinished goals, recurring loops, behavioral drift, abandoned intentions, momentum, and continuity breaks.
-
-### Reflection Loops
-
-Periodic reflection transforms raw memory into higher-level cognition through summarization, pattern detection, memory compression, self-model updates, and trajectory analysis.
+- conversations
+- goals
+- commitments
+- emotional signals
+- behavioral traces
+- continuity-relevant events
 
 ### Salience
 
-Not all memories are equally important.
+Not all memories should matter equally.
 
-The system evaluates salience using emotional intensity, recurrence, identity relevance, goal relevance, novelty, and unresolved tension.
+The salience layer prioritizes events using:
 
-## Why This Project Exists
+- emotional intensity
+- recurrence
+- identity relevance
+- goal relevance
+- unresolved tension
 
-Current AI memory systems are mostly vector databases, chat history retrieval, or short-term personalization layers.
+### Identity
 
-They rarely model continuity, evolving identity, behavioral trajectories, or long-term coherence.
+Tracks evolving:
 
-This project aims to explore a deeper architecture for longitudinal intelligence.
+- identity themes
+- professional orientation
+- values
+- behavioral tendencies
+- long-term trajectories
 
-## Research Questions
+All identity claims are evidence-backed.
 
-- What differentiates memory from continuity?
-- How should intelligent systems forget?
-- Which experiences become identity-level memories?
-- Can reflection improve coherence over time?
-- How should AI systems model behavioral evolution?
-- What makes long-term human-agent interaction trustworthy?
+### Temporal Reasoning
 
-## System Architecture
+Tracks continuity across time:
 
-```txt
-User Experience
-        ↓
-Event Memory Layer
-        ↓
-Salience Engine
-        ↓
-Identity Model
-        ↓
-Temporal Reasoning Engine
-        ↓
-Reflection Engine
-        ↓
-Continuity Policies
+- recurring loops
+- contradictions
+- momentum decay
+- continuity gaps
+- unresolved commitments
+
+### Reflection
+
+Transforms raw events into:
+
+- continuity summaries
+- recovery briefs
+- narrative synthesis
+- trajectory interpretation
+
+## Demos
+
+### Goal Drift Demo
+
+Detects when an important long-term goal begins decaying through missed commitments and contradictions.
+
+Run:
+
+```bash
+PYTHONPATH=. python3 examples/goal_drift_demo/run_demo.py
 ```
 
-## Planned Components
+### Identity Shift Demo
 
-### Memory Layer
+Tracks identity evolution through evidence-backed claims.
 
-Structured storage for events, conversations, goals, and experiences.
+Run:
 
-### Identity Layer
+```bash
+PYTHONPATH=. python3 examples/identity_shift_demo/run_demo.py
+```
 
-Dynamic self-model construction and behavioral profiling.
+### Continuity Recovery Demo
 
-### Temporal Engine
+Reconstructs context after a long inactivity gap.
 
-Long-horizon continuity tracking and trajectory analysis.
+Run:
 
-### Reflection Engine
+```bash
+PYTHONPATH=. python3 examples/continuity_recovery_demo/run_demo.py
+```
 
-Periodic synthesis and self-model revision.
+## Quick Start
 
-### Salience Engine
+Clone the repository:
 
-Importance ranking and memory prioritization.
+```bash
+git clone https://github.com/aditya89bh/personal-continuity-agent.git
+cd personal-continuity-agent
+```
 
-### Continuity Policies
+Create virtual environment:
 
-Retention, decay, reinforcement, and forgetting strategies.
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
-## Example Demo Scenarios
+Install dependencies:
+
+```bash
+pip3 install -r requirements.txt
+```
+
+Run tests:
+
+```bash
+pytest
+```
+
+Run all demos:
+
+```bash
+PYTHONPATH=. python3 run_all_demos.py
+```
+
+## Example Outputs
 
 ### Goal Drift Detection
 
-The system detects repeated abandonment of long-term goals.
+```txt
+Goal drift status: high_drift_risk
+Goal drift score: 1.0
+Contradictions: 1
+```
 
 ### Identity Evolution
 
-Tracks changes in the user's identity and priorities over time.
+```txt
+AGI systems thinker
+Cognitive architecture builder
+Embodied continuity researcher
+```
 
 ### Continuity Recovery
 
-After months of inactivity, the agent reconstructs active goals, unresolved loops, emotional trajectory, and strategic context.
+```txt
+Continuity gaps detected: 1
+Main unresolved loop identified
+Recovery brief generated
+```
 
-### Reflective Summaries
+## Results
 
-The system generates periodic summaries of behavioral evolution, recurring patterns, and long-term growth trajectories.
+See:
 
-## Technical Direction
+```txt
+RESULTS.md
+```
 
-Initial stack:
+for captured demo outputs, interpretations, and current system capabilities.
 
-- Python
-- SQLite or Postgres
-- JSON-based event memory
-- Lightweight modular architecture
-- Optional embeddings and vector retrieval
+## Repository Structure
 
-Future directions:
+```txt
+personal-continuity-agent/
+├── continuity_core/
+│   ├── memory/
+│   ├── salience/
+│   ├── identity/
+│   ├── temporal/
+│   └── reflection/
+├── examples/
+├── tests/
+├── results/
+├── docs/
+└── research/
+```
 
+## Current Limitations
+
+This is currently a research-practice prototype.
+
+The system does not yet include:
+
+- persistent databases
+- real user ingestion pipelines
+- production APIs
+- authentication
+- privacy tooling
+- UI/dashboard
+- LLM-generated reflection
+- deployment infrastructure
+
+These are intentionally deferred until the continuity architecture is more mature.
+
+## Research Direction
+
+The long-term direction includes:
+
+- memory decay and forgetting
+- memory compression
+- contradiction repair
+- longitudinal identity evolution
 - multimodal continuity
 - embodied continuity systems
-- voice memory
-- wearable integration
 - robotics continuity
-- multi-agent continuity networks
+- reflective agent architectures
+
+## Roadmap
+
+### Phase 1
+
+- event memory
+- salience scoring
+- identity modeling
+- temporal reasoning
+- reflection engine
+- continuity recovery
+
+### Phase 2
+
+- forgetting policies
+- memory compression
+- contradiction repair
+- richer continuity synthesis
+
+### Phase 3
+
+- CLI continuity explorer
+- visual timeline system
+- persistent storage
+- interactive continuity dashboard
 
 ## Strategic Positioning
 
@@ -158,42 +289,8 @@ This project sits at the intersection of:
 - AI Agents
 - Long-Term Personalization
 - Temporal Intelligence
-- Human-AI Interaction
 - Reflective Systems
 - Embodied AI
-
-## Repository Structure
-
-```txt
-personal-continuity-agent/
-├── docs/
-├── research/
-├── continuity_core/
-│   ├── memory/
-│   ├── identity/
-│   ├── reflection/
-│   ├── temporal/
-│   └── salience/
-├── examples/
-└── tests/
-```
-
-## Current Status
-
-Phase 0:
-
-- repository initialization
-- research structure
-- architecture definition
-- continuity framework design
-
-Upcoming:
-
-- event memory system
-- salience ranking
-- reflection loops
-- identity graph prototype
-- continuity demos
 
 ## Long-Term Vision
 
