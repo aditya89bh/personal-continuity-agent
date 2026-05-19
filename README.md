@@ -50,6 +50,23 @@ Reflection Engine
 Continuity Recovery
 ```
 
+```mermaid
+flowchart TD
+    A[User Events] --> B[Memory Layer]
+    B --> C[Salience Engine]
+    C --> D[Identity Model]
+    D --> E[Temporal Reasoner]
+    E --> F[Reflection Engine]
+    F --> G[Continuity Recovery]
+
+    B -.-> B1[Stores continuity-relevant events]
+    C -.-> C1[Ranks importance]
+    D -.-> D1[Tracks evolving self-model]
+    E -.-> E1[Tracks gaps, contradictions, momentum]
+    F -.-> F1[Synthesizes continuity summaries]
+    G -.-> G1[Reconstructs context after inactivity]
+```
+
 ## Cognitive Layers
 
 ### Memory
